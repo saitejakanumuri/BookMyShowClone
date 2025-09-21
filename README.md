@@ -20,6 +20,11 @@ Tech Stack: MERN (MongoDB, Express.js, React.js, Node.js), Redux, Stripe API, Re
 /partner - have permissions to add theatres/shows to the site.
 /user - can only book movies in the site.
 
+
+project structure:
+bookMyShow -client-package.json-.env -vercel deploy
+bookMyShow -server-package.json-.env  -render deploy
+
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 # Getting Started with Create React App
