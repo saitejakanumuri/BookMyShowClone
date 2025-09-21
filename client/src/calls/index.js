@@ -1,9 +1,7 @@
 import axios from 'axios';
 // In client/src/calls/index.js
 export const axiosInstance = axios.create({
-    baseURL: process.env.NODE_ENV === 'development' 
-        ? "http://localhost:8082/api" 
-        : "/api",
+    baseURL: process.env.REACT_APP_API_URL,
     headers: {
         "Content-Type": "application/json"
     }

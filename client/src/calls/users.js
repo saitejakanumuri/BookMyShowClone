@@ -1,4 +1,4 @@
-const {axiosInstance} = require('./index');
+import { axiosInstance } from './index';
 
 export const RegisterUser = async (data) => {
     try {

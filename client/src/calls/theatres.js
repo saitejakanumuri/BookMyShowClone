@@ -1,4 +1,4 @@
-const {axiosInstance} = require("./index");
+import { axiosInstance } from "./index";
 
 
 //add theatre

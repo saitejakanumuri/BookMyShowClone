@@ -12,9 +12,17 @@ const showsRouter = require("./routes/showRoutes");
 const bookingRouter = require("./routes/bookingRoutes");
 const app = express();
 
+const allowedOrigins = [
+    "http://localhost:3000",                     // local dev
+    process.env.FRONTEND_URL      // your deployed frontend
+];
+
 // CORS configuration
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+        res.header("Access-Control-Allow-Origin", origin);
+    }
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -32,7 +40,7 @@ app.set("trust proxy", 1);
 app.use(helmet({
     xPoweredBy: false,
 }));
-app.disable("x-powered-by");
+app.disable("x-powered-by");    
 app.use((req, res ,next) => {
     res.header("X-powered-by", 'No-entry');
     next();
@@ -56,7 +64,8 @@ app.use("/api/theatres", theatreRouter);
 app.use("/api/shows", showsRouter);
 app.use("/api/bookings", bookingRouter);
 
-app.listen(8082, ()=>{
+const PORT = process.env.PORT || 8082;
+app.listen(PORT, ()=>{
     console.log("Server is running and listening at 8082");
 })
 connectToDB();

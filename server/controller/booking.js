@@ -68,7 +68,7 @@ exports.bookShow = async (req, res) => {
             data: populatedBooking
         })
         console.log("-----before sending email after booking ticket data --->-----",populatedBooking);
-        await emailHelper("ticket.html", "saitejakanumuri29565@gmail.com", {
+        await emailHelper("ticket.html", populatedBooking.user.email, {
             name: populatedBooking.user.name,
             movie: populatedBooking.show.movie.name,
             theatre: populatedBooking.show.theatre.name,
@@ -79,7 +79,7 @@ exports.bookShow = async (req, res) => {
             transactionId: populatedBooking.transactionId
         })
         console.log("----after sending email to booked user ----------")
-        
+
     }catch(err){
         res.send({
             success: false,
