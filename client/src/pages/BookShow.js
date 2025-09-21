@@ -178,7 +178,7 @@ function BookShow() {
                 <div className="movie-title-details">
                   <h1>{show.movie.name}</h1>
                   <p>
-                    Theatre: {show.name}, {show.theatre.address}
+                    Theatre: {show.theatre.name}, {show.theatre.address}
                   </p>
                 </div>
               }

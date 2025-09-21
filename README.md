@@ -10,12 +10,15 @@ Developed a full-stack replica of BookMyShow, a popular movie ticket booking pla
 
 📧 Email Notifications – auto-generated booking confirmation emails with ticket details.
 
-👤 User Authentication – login/signup with JWT token-based authentication.
+👤 User Authentication – login/signup/admin/partner with JWT token-based authentication.
 
 📊 Admin Dashboard – manage movies, theatres, shows, and bookings
 
 Tech Stack: MERN (MongoDB, Express.js, React.js, Node.js), Redux, Stripe API, Resend API for emails, Ant Design (UI), Moment.js.
 
+/admin - have permission to add movies/ Approve theatres/ add shows to the site.
+/partner - have permissions to add theatres/shows to the site.
+/user - can only book movies in the site.
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
